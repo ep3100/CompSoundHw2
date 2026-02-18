@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html land="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+        <title>WebAudio Synth</title>
+        <style>
+            body {
+                font-family: 'Segeo UI';
+                background-color: antiquewhite;
+                color: #333;
+                padding: 20px;
+                text-align: center;
+                transition: background-color 0.2s;
+            }
+
+            h2 { margin-bottom: 0.5em; }
+
+            .controls {
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0,1);
+                display: inline-block;
+                text-align: left;
+                margin-bottom: 20px;
+                max-width: 500px;
+                width: 100%;
+            }
+
+            .control-row {
+                margin-bottom: 15px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            label { font-weight: bold; font-size: 0.9em; }
+
+            input[type=range] { vertical-align: middle; cursor: pointer; }
+
+            #chord-display {
+                font-size: 2em;
+                font-weight: bold;
+                height: 50px;
+                line-height: 50px;
+                color: black
+            }
+
+            .instruction {
+                background: white;
+                padding: 10px;
+                border-radius: 4px;
+                display: inline-block;
+                font-family: monospace;
+                font-size: 0.9em;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h1>WebAudio Synth Engine</h1>
+    
+        <div class="controls">
+            <div class="control-row">
+                <label for="synthMode">Synthesis Mode:</label>
+                <select id="synthMode">
+                    <option value="additive">Additive (Organ/Bell)</option>
+                    <option value="fm">FM (Metallic)</option>
+                    <option value="am">AM (Tremolo)</option>
+                </select>
+            </div>
+            <div class="control-row">
+                <label for="modFreq">Mod Frequency:</label>
+                <input type="range" id="modFreq" min="1" max="200" value="10">
+            </div>
+            <div class="control-row">
+                <label for="modDepth">Mod Depth:</label>
+                <input type="range" id="modDepth" min="0" max="1000" value="100">
+            </div>
+            <div class="control-row">
+                <label for="lfoRate">LFO Rate (Vibrato):</label>
+                <input type="range" id="lfoRate" min="0" max="15" step="0.5" value="6">
+            </div>
+        </div>
+    
+        <div id="chord-display"></div>
+    
+        <div class="instructions">
+            <p><strong>Lower Octave:</strong> Z S X D C V G B H N J M</p>
+            <p><strong>Upper Octave:</strong> Q 2 W 3 E R 5 T 6 Y 7 U</p>
+        </div>
+    
+        <script src="synth.js"></script>
+    </body>
+</html>

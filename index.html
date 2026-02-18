@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html land="en">
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content=""width=device-width, initial-scale="1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>WebAudio Synth</title>
         <style>
             body {
-                font-family: 'Segeo UI';
+                font-family: 'Segoe UI';
                 background-color: antiquewhite;
                 color: #333;
                 padding: 20px;
@@ -20,7 +20,7 @@
                 background: white;
                 padding: 20px;
                 border-radius: 8px;
-                box-shadow: 0 2px 5px rgba(0,0,0,0,1);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
                 display: inline-block;
                 text-align: left;
                 margin-bottom: 20px;
@@ -47,7 +47,7 @@
                 color: black
             }
 
-            .instruction {
+            .instructions {
                 background: white;
                 padding: 10px;
                 border-radius: 4px;
@@ -81,6 +81,19 @@
             <div class="control-row">
                 <label for="lfoRate">LFO Rate (Vibrato):</label>
                 <input type="range" id="lfoRate" min="0" max="15" step="0.5" value="6">
+            </div>
+            <div class="control-row">
+                <label for="lfoDepth">LFO Depth (Vibrato):</label>
+                <input type="range" id="lfoDepth" min="0" max="50" step="0.5" value="10">
+            </div>
+            <div class="control-row">
+                <label for="waveform">Waveform</label>
+                <select id="waveform">
+                    <option value="sine">Sine</option>
+                    <option value="sawtooth">Sawtooth</option>
+                    <option value="square">Square</option>
+                    <option value="triangle">Triangle</option>
+                </select>
             </div>
         </div>
     

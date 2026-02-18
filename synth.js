@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const modScalar = audioCtx.createGain();
 
             const dcOffset = audioCtx.createConstantSource();
-            dcOffset.offset.value = 1;
+            dcOffset.offset.value = 0.5;
             dcOffset.start();
             nodes.push(dcOffset);
             
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             modulator.frequency.value = mFreq;
 
             amGain.gain.value = 0;
-            modScalar.gain.value = mDepth / 1000;
+            modScalar.gain.value = (mDepth / 1000) * 0.5;
 
             dcOffset.connect(amGain.gain);
             modulator.connect(modScalar);
